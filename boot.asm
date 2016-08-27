@@ -161,7 +161,9 @@ hang:
     mov si, success
     call puts
     
-    jmp $      ; infinite loop
+    _hang:
+        hlt ; reduce cpu usage
+        jmp _hang
 
 
 
